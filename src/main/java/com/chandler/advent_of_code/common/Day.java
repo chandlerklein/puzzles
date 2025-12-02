@@ -48,7 +48,7 @@ public abstract class Day {
 
     private Path getFilePath() {
         String className = this.getClass().toString();
-        String yearDay = className.replaceAll("[a-zA-Z.\\s]", "");
+        String yearDay = className.replaceAll("[a-zA-Z._\\s]", "");
         int year = parseInt(yearDay.substring(0, 4));
         int day = parseInt(yearDay.substring(4));
 
