@@ -7,7 +7,7 @@ import static java.lang.Math.floorDivExact;
 import static java.util.stream.Gatherers.windowFixed;
 
 public class Day02 extends Day {
-    public static void main(String[] args) {
+    void main() {
         new Day02().run();
     }
 

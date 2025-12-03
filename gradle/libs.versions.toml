@@ -1,0 +1,9 @@
+[versions]
+com-google-guava-guava = "33.5.0-jre"
+commons-cli-commons-cli = "1.11.0"
+io-github-cdimascio-dotenv-java = "3.2.0"
+
+[libraries]
+com-google-guava-guava = { module = "com.google.guava:guava", version.ref = "com-google-guava-guava" }
+commons-cli-commons-cli = { module = "commons-cli:commons-cli", version.ref = "commons-cli-commons-cli" }
+io-github-cdimascio-dotenv-java = { module = "io.github.cdimascio:dotenv-java", version.ref = "io-github-cdimascio-dotenv-java" }
