@@ -3,3 +3,4 @@
 aoc.iml
 resources
 target
+.env

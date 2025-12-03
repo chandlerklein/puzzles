@@ -10,13 +10,15 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
 import static java.lang.Integer.parseInt;
-import static java.net.http.HttpResponse.BodyHandlers.ofFile;
+import static java.net.http.HttpResponse.BodyHandlers;
 import static java.time.Duration.ofSeconds;
 
 public class InputDownloader {
@@ -38,17 +40,28 @@ public class InputDownloader {
         int day = parseInt(cmd.getOptionValue("d", String.valueOf(currentDay)));
         String cookie = cmd.getOptionValue("c");
 
+        download(year, day, cookie);
+    }
+
+    static Path download(int year, int day, String cookie) throws IOException, InterruptedException {
         String uri = "https://adventofcode.com/%d/day/%d/input".formatted(year, day);
+        System.out.printf("Downloading input from %s...%n%n", uri);
 
         try (var client = HttpClient.newHttpClient()) {
-            var request = HttpRequest.newBuilder()
-                                     .uri(URI.create(uri))
-                                     .setHeader("Content-Type", "text/plain")
-                                     .setHeader("Cookie", "session=%s".formatted(cookie))
-                                     .timeout(ofSeconds(5))
-                                     .build();
+            var request = HttpRequest
+                .newBuilder()
+                .uri(URI.create(uri))
+                .setHeader("Content-Type", "text/plain")
+                .setHeader("Cookie", "session=%s".formatted(cookie))
+                .timeout(ofSeconds(5))
+                .build();
+            var response = client.send(request, BodyHandlers.ofInputStream());
+            if (response.statusCode() != 200) {
+                throw new IllegalStateException("Failed to download problem input from: %s".formatted(uri));
+            }
             Path outputPath = Paths.get("src", "main", "resources", "%d-%02d.txt".formatted(year, day));
-            client.send(request, ofFile(outputPath));
+            Files.copy(response.body(), outputPath, StandardCopyOption.REPLACE_EXISTING);
+            return outputPath;
         }
     }
 
