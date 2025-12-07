@@ -1,16 +1,8 @@
 package com.chandler.advent_of_code.year2025;
 
 import com.chandler.advent_of_code.common.Day;
-import org.jspecify.annotations.NonNull;
-
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.List;
 
 import static java.lang.Integer.parseInt;
-import static java.util.Objects.requireNonNull;
-import static java.util.stream.Collectors.joining;
 
 public class Day03 extends Day {
     static void main() {

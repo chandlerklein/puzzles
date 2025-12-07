@@ -1,8 +1,9 @@
 .env
-.gradle
-.idea
+.gradle/
+.idea/
 .settings
 aoc.iml
-build
-resources
-target
+build/
+out/
+resources/
+target/
