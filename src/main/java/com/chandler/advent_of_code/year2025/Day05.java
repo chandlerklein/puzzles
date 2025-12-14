@@ -34,7 +34,7 @@ public class Day05 extends Day {
             .stream(string().split("\n\n")[0].split("\n"))
             .map(str -> str.split("-"))
             .map(arr -> Range.closed(parseLong(arr[0]), parseLong(arr[1])))
-            .collect(TreeRangeSet::<Long>create, TreeRangeSet::add, (rs1, rs2) -> rs1.addAll(rs2))
+            .collect(TreeRangeSet::<Long>create, TreeRangeSet::add, TreeRangeSet::addAll)
             .asRanges()
             .stream()
             .mapToLong(r -> r.upperEndpoint() - r.lowerEndpoint() + 1)
