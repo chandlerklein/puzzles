@@ -4,7 +4,6 @@ import com.chandler.advent_of_code.common.Day;
 import com.chandler.advent_of_code.common.Line;
 import com.chandler.advent_of_code.common.Point3d;
 import org.jgrapht.alg.util.UnionFind;
-import org.jspecify.annotations.NonNull;
 
 import java.util.HashSet;
 import java.util.List;
@@ -46,7 +45,7 @@ public class Day08 extends Day {
         throw new IllegalStateException();
     }
 
-    private @NonNull List<Point3d<Long>> getPoints() {
+    private List<Point3d<Long>> getPoints() {
         return stream()
             .map(line -> line.split(","))
             .map(split -> new Point3d<>(parseLong(split[0]), parseLong(split[1]), parseLong(split[2])))
