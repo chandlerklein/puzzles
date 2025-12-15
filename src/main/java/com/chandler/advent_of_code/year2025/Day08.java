@@ -15,8 +15,7 @@ import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.IntStream.range;
 
 public class Day08 extends Day {
-
-    static void main() {
+    void main() {
         new Day08().run();
     }
 

@@ -8,8 +8,7 @@ import static java.lang.Integer.parseInt;
 import static java.lang.Math.abs;
 
 public class Day01 extends Day {
-
-    public static void main(String[] args) {
+    void main() {
         new Day01().run();
     }
 

@@ -5,7 +5,7 @@ import com.chandler.advent_of_code.common.Day;
 import static java.lang.Integer.parseInt;
 
 public class Day03 extends Day {
-    static void main() {
+    void main() {
         new Day03().run();
     }
 

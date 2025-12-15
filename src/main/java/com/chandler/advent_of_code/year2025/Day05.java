@@ -9,8 +9,7 @@ import java.util.Arrays;
 import static java.lang.Long.parseLong;
 
 public class Day05 extends Day {
-
-    static void main() {
+    void main() {
         new Day05().run();
     }
 

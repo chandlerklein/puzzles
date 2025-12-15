@@ -9,7 +9,7 @@ public class Day04 extends Day {
     private static final int[][] DIRECTIONS = new int[][]{
         { 0, 1 }, { 1, 0 }, { 1, 1 }, { -1, -1 }, { -1, 0 }, { 0, -1 }, { -1, 1 }, { 1, -1 } };
 
-    static void main() {
+    void main() {
         new Day04().run();
     }
 

@@ -13,8 +13,7 @@ import static java.util.Arrays.asList;
 import static java.util.stream.LongStream.range;
 
 public class Day06 extends Day {
-
-    static void main() {
+    void main() {
         new Day06().run();
     }
 
