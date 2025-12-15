@@ -23,8 +23,7 @@ public class Day09 extends Day {
             .boxed()
             .flatMap(i -> range(i + 1, points.size()).mapToObj(j -> Rectangle.area(points.get(i), points.get(j))))
             .map(Double::longValue)
-            .max(naturalOrder())
-            .orElseThrow();
+            .max(naturalOrder()).orElseThrow();
     }
 
     @Override public Object part2() {
