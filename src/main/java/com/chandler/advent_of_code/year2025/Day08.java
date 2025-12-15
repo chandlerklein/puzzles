@@ -1,8 +1,8 @@
 package com.chandler.advent_of_code.year2025;
 
 import com.chandler.advent_of_code.common.Day;
-import com.chandler.advent_of_code.common.Line;
-import com.chandler.advent_of_code.common.Point3d;
+import com.chandler.advent_of_code.util.Line;
+import com.chandler.advent_of_code.util.Point3d;
 import org.jgrapht.alg.util.UnionFind;
 
 import java.util.HashSet;

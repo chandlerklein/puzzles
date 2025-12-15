@@ -1,4 +1,4 @@
-package com.chandler.advent_of_code.common;
+package com.chandler.advent_of_code.util;
 
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
